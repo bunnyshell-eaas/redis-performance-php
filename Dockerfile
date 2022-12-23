@@ -16,7 +16,7 @@ RUN apt-get update && apt-get install -y \
 RUN docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/
 
 # Install required PHP extensions
-RUN docker-php-ext-install -j$(nproc) gd mysqli pdo pdo_mysql intl xml zip
+RUN docker-php-ext-install -j$(nproc) gd mysqli pdo pdo_mysql intl xml zip xdebug-3.1.5
 
 # Set working directory
 WORKDIR /var/www/html
@@ -24,3 +24,4 @@ WORKDIR /var/www/html
 # Copy source files to working directory
 COPY index.php .
 
+COPY docker-php-ext-xdebug.ini /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
