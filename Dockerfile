@@ -11,6 +11,6 @@ COPY index.php .
 
 COPY docker-php-ext-xdebug.ini /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
 
-RUN sed -i 's|Listen 80|Listen 8080|' /etc/apache2/ports.conf && sed -i 's|Listen 443|Listen 8443|' /etc/apache2/ports.conf && sed -i 's|80|8080| /etc/apache2/sites-enabled/000-default.conf'
+RUN sed -i 's|Listen 80|Listen 8080|' /etc/apache2/ports.conf && sed -i 's|Listen 443|Listen 8443|' /etc/apache2/ports.conf && sed -i 's|80|8080| /etc/apache2/sites-enabled/000-default.conf' && service apache2 restart
 
 #USER www-data
