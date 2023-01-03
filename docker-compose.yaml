@@ -5,4 +5,4 @@ services:
     environment:
       REDIS_HOST: 'redis'
     ports:
-      - '80:80'
+      - '8080:8080'
