@@ -10,3 +10,5 @@ WORKDIR /var/www/html
 COPY index.php .
 
 COPY docker-php-ext-xdebug.ini /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+
+USER www-data
